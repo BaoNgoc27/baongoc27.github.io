@@ -1,115 +1,285 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CV — Nguyen Bao Ngoc</title>
-  <meta name="description" content="Minimalist CV of Nguyen Bao Ngoc" />
-  <style>
-    :root { --fg:#111; --muted:#666; --link:#0b57d0; --border:#e6e6e6; }
-    html,body{margin:0;padding:0;background:#fff;color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
-    .wrap{max-width:820px;margin:40px auto;padding:0 20px;}
-    header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:1px solid var(--border);padding-bottom:16px;}
-    h1{margin:0;font-size:28px;letter-spacing:.2px}
-    .meta{color:var(--muted);font-size:14px}
-    .actions a{display:inline-block;margin-left:8px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;text-decoration:none}
-    h2{margin:28px 0 8px 0;font-size:18px}
-    ul{margin:8px 0 0 18px}
-    .item{margin:14px 0}
-    .title{font-weight:600}
-    .sub{color:var(--muted);font-size:14px}
-    a{color:var(--link)}
-    @media print{
-      .actions{display:none}
-      body{font-size:13px}
-      .wrap{margin:0 auto}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CV — Nguyễn Bảo Ngọc</title>
+<meta name="description" content="CV Nguyễn Bảo Ngọc — Kinh tế Đầu tư, UEH" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B3A5C;
+    --navy-deep:#122A44;
+    --ink:#212529;
+    --muted:#63697A;
+    --line:#DFE2E7;
+    --panel:#F4F5F7;
+    --paper:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#E9EAEC;color:var(--ink);}
+  body{font-family:'Source Sans 3',Calibri,'Segoe UI',Aptos,Arial,sans-serif;font-size:13.6px;line-height:1.55;}
+
+  .page{max-width:800px;margin:34px auto;background:var(--paper);box-shadow:0 10px 30px rgba(18,42,68,0.14);}
+
+  .head{background:var(--navy);color:#fff;padding:32px 46px 26px;}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;}
+  .name{font-size:29px;font-weight:700;letter-spacing:.2px;margin:0 0 6px;color:#fff;}
+  .tagline{color:#C7D2E0;font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;margin:0;}
+  .contact-col{text-align:right;font-size:12.3px;color:#D7DEE8;}
+  .contact-col a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.35);}
+  .contact-col a:hover{border-color:#fff;}
+  .contact-col div{margin-bottom:4px;}
+  .contact-col div:last-child{margin-bottom:0;}
+
+  .actions{position:fixed;top:18px;right:18px;z-index:10;}
+  .actions a{font-size:12px;font-weight:600;color:var(--navy);background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:6px;text-decoration:none;box-shadow:0 2px 10px rgba(18,42,68,0.16);}
+  .actions a:hover{border-color:var(--navy);}
+
+  .body{padding:28px 46px 38px;}
+
+  .obj{
+    font-size:13.6px;color:var(--ink);line-height:1.6;margin:0 0 24px;
+    padding:15px 18px;background:var(--panel);border-left:3px solid var(--navy);
+  }
+  .obj b{color:var(--navy);}
+
+  section{margin-bottom:22px;}
+  section:last-child{margin-bottom:0;}
+
+  .sec-h{display:flex;align-items:center;gap:11px;margin:0 0 12px;}
+  .sec-num{
+    font-size:11.5px;font-weight:700;color:#fff;background:var(--navy);
+    width:20px;height:20px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .sec-title{
+    font-size:13.5px;font-weight:700;color:var(--navy);
+    letter-spacing:.8px;text-transform:uppercase;
+  }
+  .sec-h::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  .sec-body{padding-left:31px;}
+
+  .entry{margin-bottom:13px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .entry-title{font-weight:600;color:var(--ink);font-size:13.8px;}
+  .entry-meta{color:var(--muted);font-size:11.5px;font-weight:600;letter-spacing:.3px;white-space:nowrap;text-transform:uppercase;}
+  .entry-sub{color:var(--muted);font-size:12.3px;margin-top:2px;font-style:italic;}
+  .entry ul{margin:6px 0 0;padding-left:17px;}
+  .entry ul li{margin-bottom:4px;color:var(--ink);font-size:12.8px;}
+  .entry ul li::marker{color:var(--navy);}
+
+  .research-item{border-left:2px solid var(--line);padding-left:14px;margin-bottom:15px;}
+  .research-item:last-child{margin-bottom:0;}
+  .research-item .entry-title{font-size:13.4px;}
+  .badge{
+    display:inline-block;font-size:10px;font-weight:700;letter-spacing:.5px;color:#fff;
+    background:var(--navy);padding:2px 7px;border-radius:3px;margin-right:7px;vertical-align:middle;
+  }
+
+  .plain-list{display:grid;grid-template-columns:1fr 1fr;gap:5px 20px;margin:0;padding:0;list-style:none;}
+  .plain-list li{font-size:12.8px;color:var(--ink);padding-left:14px;position:relative;}
+  .plain-list li::before{content:"—";position:absolute;left:0;color:var(--navy);}
+
+  .skill-groups{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+  .skill-group .sg-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .skill-group ul{margin:0;padding-left:14px;}
+  .skill-group ul li{font-size:12.5px;color:var(--ink);margin-bottom:3px;}
+  .skill-group ul li::marker{color:var(--navy);}
+
+  @media (max-width:640px){
+    .page{margin:0;}
+    .head{padding:26px 24px 22px;}
+    .body{padding:24px 24px 30px;}
+    .head-row{flex-direction:column;align-items:flex-start;}
+    .contact-col{text-align:left;}
+    .sec-body{padding-left:0;}
+    .plain-list{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr;}
+    .actions{position:static;text-align:center;margin:12px 0;}
+  }
+
+  @media print{
+    body{background:#fff;}
+    .actions{display:none;}
+    .page{box-shadow:none;margin:0;max-width:100%;}
+    .head{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .obj,.sec-num,.badge{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    @page{margin:0;size:A4;}
+  }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Nguyen Bao Ngoc</h1>
-        <div class="meta">Ho Chi Minh City, Vietnam · <a href="mailto:nnguyenbao400@gmail.com">nnguyenbao400@gmail.com</a> · +84 398 780 027</div>
-        <div class="meta"><a href="https://www.linkedin.com/in/BaoNgoc27">LinkedIn</a> · <a href="https://github.com/BaoNgoc27">GitHub</a></div>
-      </div>
-      <div class="actions">
-        <a href="cv-nguyen-bao-ngoc.pdf" target="_blank">Download PDF</a>
-        <a href="#" onclick="window.print();return false;">Print</a>
-      </div>
-    </header>
 
-    <section>
-      <h2>Summary</h2>
-      <ul>
-        <li>Sinh viên năm cuối ngành <b>Kinh tế Đầu tư</b> (UEH), định hướng nghề nghiệp trong <b>ngân hàng & tài chính</b>.</li>
-        <li>Nền tảng: thẩm định dự án (NPV/IRR/Payback), tài chính doanh nghiệp, thị trường vốn.</li>
-        <li>Thực tập tại <b>ACB</b>: giao tiếp khách hàng, hỗ trợ nghiệp vụ tín dụng, phân tích dữ liệu cơ bản.</li>
-        <li>Công cụ: Excel nâng cao, Power BI; Python (Pandas/Matplotlib) & SQL cho phân tích định lượng.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="item">
-        <div class="title">University of Economics Ho Chi Minh City (UEH) — B.A. Investment Economics</div>
-        <div class="sub">09/2021 – Present · GPA: 3.5/4.0 (expected 2025)</div>
-        <ul>
-          <li>Môn tiêu biểu: Investment Project Appraisal, Asset Valuation, Corporate Finance, Capital Markets.</li>
-          <li>CLB Tài chính – Ngân hàng: case study & workshop học thuật.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-      <div class="item">
-        <div class="title">Asia Commercial Bank (ACB) — Intern, Retail Banking</div>
-        <div class="sub">06/2024 – 08/2024 · Ho Chi Minh City</div>
-        <ul>
-          <li>Hỗ trợ giao dịch tại quầy: mở tài khoản, tư vấn sản phẩm tiết kiệm & thẻ.</li>
-          <li>Phân tích dữ liệu khách hàng cơ bản để hỗ trợ chăm sóc KH thân thiết.</li>
-          <li>Tìm hiểu quy trình tín dụng; hỗ trợ chuẩn bị hồ sơ vay vốn cá nhân.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div class="item">
-        <div class="title">Investment Project Feasibility Analysis</div>
-        <div class="sub">09/2023 – 12/2023</div>
-        <ul>
-          <li>Đánh giá khả thi dự án hạ tầng bằng NPV, IRR, Payback; mô hình Excel & báo cáo.</li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="title">Retail Sales Data Analysis</div>
-        <div class="sub">01/2024 – 03/2024</div>
-        <ul>
-          <li>Python (Pandas/Matplotlib), dashboard Power BI, đề xuất cải thiện vận hành.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li><b>Banking & Finance:</b> phân tích BCTC, quy trình tín dụng, sản phẩm huy động & cho vay.</li>
-        <li><b>Investment:</b> thẩm định dự án, định giá tài sản, thị trường vốn.</li>
-        <li><b>Data & Tools:</b> Excel, Power BI, Python, SQL.</li>
-        <li><b>Soft skills:</b> giao tiếp, teamwork, quản lý thời gian, tư duy phân tích.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Languages</h2>
-      <ul>
-        <li>Vietnamese — Native</li>
-        <li>English — Intermediate (IELTS 6.0)</li>
-      </ul>
-    </section>
+  <div class="actions">
+    <a href="#" onclick="window.print();return false;">In / Lưu PDF</a>
   </div>
+
+  <div class="page">
+    <div class="head">
+      <div class="head-row">
+        <div>
+          <h1 class="name">Nguyễn Bảo Ngọc</h1>
+          <p class="tagline">Sinh viên Kinh tế Đầu tư · UEH</p>
+        </div>
+        <div class="contact-col">
+          <div>TP. Hồ Chí Minh, Việt Nam</div>
+          <div><a href="mailto:nnguyenbao400@gmail.com">nnguyenbao400@gmail.com</a></div>
+          <div>+84 398 780 027</div>
+          <div><a href="https://www.linkedin.com/in/BaoNgoc27" target="_blank">linkedin.com/in/BaoNgoc27</a></div>
+          <div><a href="https://github.com/BaoNgoc27" target="_blank">github.com/BaoNgoc27</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <p class="obj">
+        Sinh viên năm cuối ngành <b>Kinh tế đầu tư</b>, Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH),
+        có nền tảng vững về phân tích doanh nghiệp, phân tích đầu tư, thẩm định dự án và phân tích dữ
+        liệu. Đã thực hiện các nghiên cứu về thị trường chứng khoán, tài chính định lượng và dự báo giá
+        cổ phiếu bằng Python, Stata và Excel. Mong muốn phát triển sự nghiệp trong lĩnh vực <b>Phân tích
+        và Nghiên cứu đầu tư</b>, đồng thời đóng góp năng lực phân tích và tinh thần học hỏi trong môi
+        trường chuyên nghiệp.
+      </p>
+
+      <section>
+        <div class="sec-h"><span class="sec-num">1</span><span class="sec-title">Học vấn</span></div>
+        <div class="sec-body">
+          <div class="entry">
+            <div class="entry-top">
+              <span class="entry-title">Đại học Kinh tế TP.HCM (UEH)</span>
+              <span class="entry-meta">Khóa K49</span>
+            </div>
+            <div class="entry-sub">Ngành: Kinh tế đầu tư &nbsp;·&nbsp; GPA hiện tại: 3.5/4.0</div>
+            <ul>
+              <li><b>Học phần chuyên ngành tiêu biểu:</b> Phân tích doanh nghiệp, Phân tích và quản lý đầu tư, Phân tích dự án đầu tư, Thẩm định dự án đầu tư, Phân tích báo cáo tài chính, Kinh tế lượng, Thị trường tài chính, Phân tích dữ liệu trong kinh tế, Học máy trong đầu tư và kinh doanh.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-h"><span class="sec-num">2</span><span class="sec-title">Dự án nghiên cứu &amp; phân tích</span></div>
+        <div class="sec-body">
+          <div class="research-item">
+            <span class="badge">RA004</span><span class="entry-title">Nghiên cứu DeFi tại Việt Nam</span>
+            <div class="entry-sub" style="margin-top:5px;">Đề tài nghiên cứu khoa học cấp trường · Vai trò: Thành viên nhóm</div>
+            <ul>
+              <li>Thu thập và tổng hợp dữ liệu về thị trường DeFi tại Việt Nam.</li>
+              <li>Tham gia biên soạn nội dung báo cáo nghiên cứu.</li>
+              <li>Thiết kế slide trình bày kết quả nghiên cứu.</li>
+            </ul>
+          </div>
+          <div class="research-item">
+            <span class="entry-title">Phản ứng của thị trường chứng khoán Việt Nam trước các sự kiện bê bối tài chính năm 2022</span>
+            <div class="entry-sub" style="margin-top:5px;">Nghiên cứu cá nhân</div>
+            <ul>
+              <li>Thu thập và xử lý dữ liệu giá cổ phiếu phục vụ nghiên cứu.</li>
+              <li>Ứng dụng phương pháp Event Study để phân tích phản ứng của thị trường.</li>
+              <li>Sử dụng Python để xử lý dữ liệu và thực hiện phân tích định lượng.</li>
+              <li>Hoàn thiện báo cáo nghiên cứu và tổng hợp kết quả phân tích.</li>
+            </ul>
+          </div>
+          <div class="research-item">
+            <span class="entry-title">Dự báo giá cổ phiếu SABECO bằng Machine Learning</span>
+            <div class="entry-sub" style="margin-top:5px;">Nghiên cứu cá nhân</div>
+            <ul>
+              <li>Thu thập và xử lý dữ liệu tài chính, thị trường và kinh tế vĩ mô phục vụ phân tích.</li>
+              <li>Xây dựng và so sánh các mô hình MLR, XGBoost và LSTM trong dự báo giá cổ phiếu.</li>
+              <li>Phân tích kết quả mô hình và hoàn thiện báo cáo nghiên cứu.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-h"><span class="sec-num">3</span><span class="sec-title">Kinh nghiệm làm việc</span></div>
+        <div class="sec-body">
+          <div class="entry">
+            <div class="entry-top">
+              <span class="entry-title">Nhân viên dịch vụ khách hàng — CGV Cinemas</span>
+            </div>
+            <ul>
+              <li>Hỗ trợ khách hàng trong quá trình sử dụng dịch vụ.</li>
+              <li>Phối hợp với các bộ phận để duy trì chất lượng phục vụ.</li>
+              <li>Xử lý các tình huống phát sinh trong môi trường làm việc có cường độ cao.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-h"><span class="sec-num">4</span><span class="sec-title">Kiến thức chuyên môn</span></div>
+        <div class="sec-body">
+          <ul class="plain-list">
+            <li>Phân tích doanh nghiệp</li>
+            <li>Phân tích đầu tư</li>
+            <li>Thẩm định dự án đầu tư</li>
+            <li>Phân tích báo cáo tài chính</li>
+            <li>Phân tích dữ liệu tài chính</li>
+            <li>Nghiên cứu thị trường chứng khoán</li>
+            <li>Tài chính định lượng</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-h"><span class="sec-num">5</span><span class="sec-title">Kỹ năng</span></div>
+        <div class="sec-body">
+          <div class="skill-groups">
+            <div class="skill-group">
+              <div class="sg-title">Phân tích</div>
+              <ul>
+                <li>Phân tích dữ liệu</li>
+                <li>Phân tích định lượng</li>
+                <li>Nghiên cứu tài chính</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <div class="sg-title">Công cụ</div>
+              <ul>
+                <li>Excel (MOS Certified)</li>
+                <li>Python</li>
+                <li>Stata</li>
+                <li>Power BI</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <div class="sg-title">Văn phòng</div>
+              <ul>
+                <li>Microsoft Word (MOS Certified)</li>
+                <li>Microsoft PowerPoint (MOS Certified)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-h"><span class="sec-num">6</span><span class="sec-title">Chứng chỉ</span></div>
+        <div class="sec-body">
+          <ul class="plain-list" style="grid-template-columns:1fr;">
+            <li>Microsoft Office Specialist (MOS) — Excel, Word, PowerPoint</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-h"><span class="sec-num">7</span><span class="sec-title">Thành tích</span></div>
+        <div class="sec-body">
+          <div class="entry">
+            <div class="entry-title">Giải thưởng CELG Student Awards</div>
+            <div class="entry-sub" style="margin-top:2px;">Lĩnh vực: Thị trường chứng khoán</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
 </body>
 </html>
